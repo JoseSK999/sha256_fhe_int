@@ -61,7 +61,7 @@ pub fn ch(x: &RadixCiphertextBig, y: &RadixCiphertextBig, z: &RadixCiphertextBig
     let mut z = z.clone();
 
     let mut left = sk.smart_neg_parallelized(&mut x);
-    sk.smart_scalar_sub_assign_parallelized(&mut left, 1); // for some reason the neg operation produces the correct result + 1
+    sk.smart_scalar_sub_assign_parallelized(&mut left, 1); // modulo negation produces bitwise NOT + 1
     let mut right = sk.smart_bitand_parallelized(&mut x, &mut y);
     sk.smart_bitand_assign_parallelized(&mut left, &mut z);
 
