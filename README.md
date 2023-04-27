@@ -12,5 +12,5 @@ fn rotate_right(x: &RadixCiphertextBig, n: usize, sk: &ServerKey) -> RadixCipher
 }
 ```
 
-
+Addition and other parallelized bitwise operations are also given as methods, so this implementation is simpler.
 
